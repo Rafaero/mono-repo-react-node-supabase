@@ -5,7 +5,12 @@ import supabase from './supabase.mjs';
 const app = express();
 
 // Enable CORS for all origins (or specify a specific origin like 'http://localhost:5173')
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+}));
+
 
 // To parse JSON bodies
 app.use(express.json());
@@ -45,7 +50,7 @@ app.post('/api/users', async (req, res) => {
     try {
         const { data, error } = await supabase
             .from('users')
-            .insert([{ name, email, age }]);
+            .insert({ name, email, age });
 
         if (error) {
             console.error('Error adding user:', error);

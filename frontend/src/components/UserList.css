@@ -1,0 +1,30 @@
+/* UserList.css */
+.user-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-list h2 {
+    margin-bottom: 10px;
+    color: #4a90e2;
+}
+
+.user-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.user-list li strong {
+    font-weight: bold;
+}
+
+.user-list button {
+    margin-left: 10px;
+}

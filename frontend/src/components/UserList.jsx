@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import api from '../api'; // Ensure this is your API configuration
+import "./UserList.css"
 
 const UserList = () => {
     const [users, setUsers] = useState([]);
@@ -8,11 +9,16 @@ const UserList = () => {
     const fetchUsers = async () => {
         try {
             const response = await api.get('/users');
+            console.log('API Response:', response.data);
             setUsers(response.data); // Set the users state to the fetched data
         } catch (error) {
             console.error('Error fetching users:', error);
+
+            
         }
     };
+
+    
 
     // Delete user by ID
     const deleteUser = async (id) => {

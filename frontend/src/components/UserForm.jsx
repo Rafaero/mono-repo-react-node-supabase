@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../api';
+import "./UserForm.css";
 
 const UserForm = ({ setUsers }) => {
     const [formData, setFormData] = useState({ name: '', email: '', age: '' });
@@ -26,7 +27,7 @@ const UserForm = ({ setUsers }) => {
             setFormData({ name: '', email: '', age: '' });
             setError(''); // Clear any previous error messages
         } catch (error) {
-            console.error('Error adding user:', error);
+            console.error('Error adding user:', error.response ? error.response.data : error.message);
             setError('Failed to add user');
         }
     };

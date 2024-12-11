@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import UserForm from './UserForm';
 import UserList from './UserList';
 import api from '../api';
+import './App.css';
 
 const App = () => {
     const [users, setUsers] = useState([]);
